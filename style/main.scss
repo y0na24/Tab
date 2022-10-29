@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  background: rgb(7, 4, 9);
+  background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.container {
+  max-width: 1280px;
+  padding: 0 15px;
+  margin: 0 auto
+}
+
+.main {
+  margin-top: 85px;
+  margin-bottom: 200px;
+}
+
+.tabcontainer {
+  display: flex;
+}
+
+.tabcontent {
+  width: 850px;
+  position: relative;
+  
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  &__descr {
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'PT Sans Narrow';
+    position: absolute;
+    top: 400px;
+    right: -200px;
+    width: 400px;
+    height: 200px;
+    background-color: rgba(114, 25, 144, 0.9);
+    font-weight: bold;
+    border-radius: 10px;
+    color: gold;
+  }
+  &--show{
+      display: block;
+  }
+  &--hide{
+      display: none;
+  }
+}
+.tabheader{
+  width: 280px;
+  padding: 35px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+  
+    h3{
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    &__item{
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:last-child{
+            margin: 0;
+        }
+    }
+    &__item--active{
+        font-weight: 700;
+    }
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+  from{
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+@media(max-width: 1920px) {
+    .tabcontent__descr{
+        width: clamp(16.875rem, 13.92rem + 14.77vw, 25rem);
+        right: clamp(-11.375rem, -10.966rem + -2.05vw, -12.5rem);
+        top: clamp(21.875rem, 20.739rem + 5.68vw, 25rem);
+    }
+}
